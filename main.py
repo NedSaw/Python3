@@ -1,4 +1,4 @@
-array = input('Введите числа через пробел от 0 до 100: ').split()
+array = input('ВВЕДИТЕ ЧИСЛА ОТ 0 ДО 100: ').split()
 L = list(map(int, array)) 
 
 def merge_sort(L):  
@@ -31,8 +31,8 @@ def merge(left, right):
         j += 1
 
     return result
-print('Отсортированный массив:', merge_sort(L))
-print('Количество элементов в  массиве:', len(merge_sort(L)))
+print('ОТСОРТИРОВАННЫЙ МАССИВ:', merge_sort(L))
+print('КОЛИЧЕСТВО ЭЛЕМЕНТОВ В МАССИВЕ:', len(merge_sort(L)))
 
 def binary_search(L, element, left, right):
     if left > right:  
@@ -49,14 +49,14 @@ def binary_search(L, element, left, right):
 
 while True:
     try:
-        element = int(input('Введите число от 0 до 100: '))
+        element = int(input('ВВЕДИТЕ ЧИСЛО ОТ 0 ДО 100: '))
         if element < 0 or element > 100:
             raise Exception
         break
     except ValueError:
-        print('Нужно ввести число!')
+        print('ВВЕДИТЕ ЧИСЛО!')
     except Exception:
-        print('Неправильный диапазон!')
+        print('НЕВЕРНЫЙ ДИАПАЗОН!')
 
 print(binary_search(L, element, 0, len(L)))
 
