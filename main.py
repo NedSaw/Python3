@@ -21,8 +21,7 @@ def merge(left, right):
         else:
             result.append(right[j])
             j += 1
-
-    # добавляем хвосты
+ 
     while i < len(left):
         result.append(left[i])
         i += 1
