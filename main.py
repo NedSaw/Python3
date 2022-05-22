@@ -1,21 +1,19 @@
 array = input('Введите числа через пробел от 0 до 100: ').split()
-L = list(map(int, array))  # преобразовываем последовательность в список
+L = list(map(int, array)) 
 
-def merge_sort(L):  # "разделяй"
-    if len(L) < 2:  # если кусок массива равен 2,
-        return L[:]  # выходим из рекурсии
+def merge_sort(L):  
+    if len(L) < 2:  
+        return L[:]  
     else:
-        middle = len(L) // 2  # ищем середину
-        left = merge_sort(L[:middle])  # рекурсивно делим левую часть
-        right = merge_sort(L[middle:])  # и правую
-        return merge(left, right)  # выполняем слияние
+        middle = len(L) // 2  
+        left = merge_sort(L[:middle])  
+        right = merge_sort(L[middle:])  
+        return merge(left, right)  
 
-
-def merge(left, right):  # "властвуй"
-    result = []  # результирующий массив
-    i, j = 0, 0  # указатели на элементы
-
-    # пока указатели не вышли за границы
+def merge(left, right): 
+    result = []  
+    i, j = 0, 0  
+    
     while i < len(left) and j < len(right):
         if left[i] < right[j]:
             result.append(left[i])
@@ -37,19 +35,17 @@ def merge(left, right):  # "властвуй"
 print('Отсортированный массив:', merge_sort(L))
 print('Количество элементов в  массиве:', len(merge_sort(L)))
 
-
-
 def binary_search(L, element, left, right):
-    if left > right:  # если левая граница превысила правую,
-        return False  # значит элемент отсутствует
+    if left > right:  
+        return False  
 
-    middle = (right + left) // 2  # находим середину
-    if L[middle] == element:  # если элемент в середине,
-        return middle  # возвращаем этот индекс
-    elif element < L[middle]:  # если элемент меньше элемента в середине
-        # рекурсивно ищем в левой половине
+    middle = (right + left) // 2  
+    if L[middle] == element:  
+        return middle  
+    elif element < L[middle]:  
+        
         return binary_search(L, element, left, middle - 1)
-    else:  # иначе в правой
+    else:  
         return binary_search(L, element, middle + 1, right)
 
 while True:
