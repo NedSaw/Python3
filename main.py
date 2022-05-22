@@ -60,6 +60,4 @@ while True:
         print('Неправильный диапазон!')
 
 print(binary_search(L, element, 0, len(L)))
-© 2022 GitHub, Inc.
-Terms
-Privacy
+
